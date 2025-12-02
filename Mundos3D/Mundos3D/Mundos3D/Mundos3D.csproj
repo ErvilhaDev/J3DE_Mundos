@@ -111,11 +111,13 @@
     <Compile Include="GameObjects\VertexColor\CubeColor.cs" />
     <Compile Include="GameObjects\GameObject.cs" />
     <Compile Include="GameObjects\VertexColor\MillColor.cs" />
+    <Compile Include="Mundos\Mundo3.cs" />
     <Compile Include="Mundos\Mundo.cs" />
     <Compile Include="Mundos\Mundo2.cs" />
     <Compile Include="Mundos\Mundo1.cs" />
     <Compile Include="GameObjects\VertexColor\PlaneColor.cs" />
     <Compile Include="GameObjects\VertexColor\PropellerColor.cs" />
+    <Compile Include="GameObjects\Textured\PlaneTexture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
@@ -158,9 +160,6 @@
       <ProductName>Microsoft XNA Framework Redistributable 4.0</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GameObjects\Textured\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />

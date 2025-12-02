@@ -13,8 +13,8 @@ namespace Mundos3D
 {
     class Mundo2 : Mundo1
     {
-        MillColor mill1;
-        MillColor mill2;
+        protected MillColor mill1;
+        protected MillColor mill2;
 
         public Mundo2(GraphicsDevice device, Game game) : base(device, game)
         {

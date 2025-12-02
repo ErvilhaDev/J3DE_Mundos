@@ -27,6 +27,7 @@ namespace Mundos3D
         {
             this.device = device;
             this.world = Matrix.Identity;
+            this.MatrixWorld = Matrix.Identity;
 
             random = new Random();
             rotateSpeed = 1f + (float)random.NextDouble() * 3f;

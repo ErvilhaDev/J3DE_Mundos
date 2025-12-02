@@ -24,6 +24,7 @@ namespace Mundos3D
 
             effect = new BasicEffect(device);
             effect.VertexColorEnabled = true;
+
         }
 
         public override void Update(GameTime gametime)

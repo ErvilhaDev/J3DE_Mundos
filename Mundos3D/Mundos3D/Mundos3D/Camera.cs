@@ -67,7 +67,8 @@ namespace Mundos3D
             if (kb.IsKeyDown(Keys.Q)) yaw += rotSpeed;   
             if (kb.IsKeyDown(Keys.E)) yaw -= rotSpeed;   
             if (kb.IsKeyDown(Keys.R)) pitch += rotSpeed; 
-            if (kb.IsKeyDown(Keys.F)) pitch -= rotSpeed; 
+            if (kb.IsKeyDown(Keys.F)) pitch -= rotSpeed;
+            if (kb.IsKeyDown(Keys.LeftShift)) moveSpeed *= 5f;
 
             
             pitch = MathHelper.Clamp(pitch, -MathHelper.PiOver2 + 0.1f, MathHelper.PiOver2 - 0.1f);
