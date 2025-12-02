@@ -1,0 +1,12 @@
+C:\Users\Vitor\Gamedev\XNA\Mundos\MundosJ3DE\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Mundos3D.exe
+C:\Users\Vitor\Gamedev\XNA\Mundos\MundosJ3DE\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Mundos3D.pdb
+C:\Users\Vitor\Gamedev\XNA\Mundos\MundosJ3DE\Mundos3D\Mundos3D\Mundos3D\obj\x86\Debug\Mundos3D.csprojResolveAssemblyReference.cache
+C:\Users\Vitor\Gamedev\XNA\Mundos\MundosJ3DE\Mundos3D\Mundos3D\Mundos3D\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Vitor\Gamedev\XNA\Mundos\MundosJ3DE\Mundos3D\Mundos3D\Mundos3D\obj\x86\Debug\Mundos3D.exe
+C:\Users\Vitor\Gamedev\XNA\Mundos\MundosJ3DE\Mundos3D\Mundos3D\Mundos3D\obj\x86\Debug\Mundos3D.pdb
+C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Mundos3D.exe
+C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Mundos3D.pdb
+C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\obj\x86\Debug\Mundos3D.csprojResolveAssemblyReference.cache
+C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\obj\x86\Debug\Mundos3D.exe
+C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\obj\x86\Debug\Mundos3D.pdb

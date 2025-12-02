@@ -1,0 +1,2 @@
+C:\Users\Vitor\Gamedev\XNA\Mundos\MundosJ3DE\Mundos3D\Mundos3D\Mundos3DContent\obj\x86\Debug\Mundos3DContent.contentprojResolveAssemblyReference.cache
+C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3DContent\obj\x86\Debug\Mundos3DContent.contentprojResolveAssemblyReference.cache
