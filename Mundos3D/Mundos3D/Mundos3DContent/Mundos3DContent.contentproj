@@ -41,9 +41,7 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="textures\t_grass.png">
       <Name>t_grass</Name>
@@ -70,6 +68,13 @@
       <Name>t_wood</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="models\XNA_Tower.fbx">
+      <Name>XNA_Tower</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

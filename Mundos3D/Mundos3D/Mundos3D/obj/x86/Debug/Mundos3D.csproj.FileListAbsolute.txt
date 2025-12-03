@@ -14,3 +14,4 @@ C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content
 C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_brick.xnb
 C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_stone.xnb
 C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_wood.xnb
+C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\models\XNA_Tower.xnb

@@ -26,6 +26,7 @@ namespace Mundos3D
         Mundo mundo1;
         Mundo mundo2;
         Mundo mundo3;
+        Mundo mundo5;
 
         public Game1()
         {
@@ -48,6 +49,7 @@ namespace Mundos3D
             mundo1 = new Mundo1(GraphicsDevice, this);
             mundo2 = new Mundo2(GraphicsDevice, this);
             mundo3 = new Mundo3(GraphicsDevice, this);
+            mundo5 = new Mundo5(GraphicsDevice, this);
 
             base.Initialize();
         }
@@ -77,10 +79,12 @@ namespace Mundos3D
                 this.Exit();
                 
             }
+
             this.camera.Update(gameTime);
             mundo1.Update(gameTime);
             mundo2.Update(gameTime);
             mundo3.Update(gameTime);
+            mundo5.Update(gameTime);
 
             base.Update(gameTime);
 
@@ -95,6 +99,7 @@ namespace Mundos3D
             mundo1.Draw(camera);
             mundo2.Draw(camera);
             mundo3.Draw(camera);
+            mundo5.Draw(camera);
 
             base.Draw(gameTime);
 

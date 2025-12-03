@@ -7,7 +7,7 @@
       <FileName>Camera.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Mundos3D.Game1">
+  <Class Name="Mundos3D.Game1" Collapsed="true">
     <Position X="16" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAQAEEAAAgAAAwAAAAAAAAQAAAAAAAgIAAAAAAAAAAQ=</HashCode>
@@ -127,7 +127,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Mundos3D.Screen" Collapsed="true">
-    <Position X="16" Y="4.75" Width="1.5" />
+    <Position X="16" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAABABARAAAAAAAAAAEBAAAQ=</HashCode>
       <FileName>Screen.cs</FileName>
