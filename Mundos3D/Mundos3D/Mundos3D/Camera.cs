@@ -83,6 +83,8 @@ namespace Mundos3D
             if (kb.IsKeyDown(Keys.S)) position -= forward * moveSpeed;
             if (kb.IsKeyDown(Keys.A)) position -= right * moveSpeed;
             if (kb.IsKeyDown(Keys.D)) position += right * moveSpeed;
+            if (kb.IsKeyDown(Keys.Z)) position += Vector3.Up * moveSpeed;
+            if (kb.IsKeyDown(Keys.X)) position -= Vector3.Up * moveSpeed;
 
             
             UpdateView();

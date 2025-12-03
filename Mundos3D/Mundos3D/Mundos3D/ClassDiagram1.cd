@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Mundos3D.Camera" Collapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAEQAAAQAAAAAAIAAAIAAAAAAAAEAAAQABAgAAAAA=</HashCode>
+      <FileName>Camera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mundos3D.Game1">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAEEAAAgAAAwAAAAAAAAQAAAAAAAgIAAAAAAAAAAQ=</HashCode>
+      <FileName>Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mundos3D.GameObject" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAmAACAAAAAgAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>GameObjects\GameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mundos3D.CubeTexture" Collapsed="true">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAgAAAAAAAEAAAAA=</HashCode>
+      <FileName>GameObjects\Textured\CubeTexture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mundos3D.MillTexture" Collapsed="true">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAgAQAAAAAEAAAAA=</HashCode>
+      <FileName>GameObjects\Textured\MillTexture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mundos3D.PlaneTexture" Collapsed="true">
+    <Position X="11.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAgAAAAAAAAAAAAgAAAAAAAEAAAAA=</HashCode>
+      <FileName>GameObjects\Textured\PlaneTexture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mundos3D.PropellerTexture" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAgAAAAAAAEAAAAA=</HashCode>
+      <FileName>GameObjects\Textured\PropellerTexture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mundos3D.CubeColor" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>GameObjects\VertexColor\CubeColor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mundos3D.MillColor" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACAAAAAAAAgAAAACAIAAAAAAAAAAQAAAAAEAAAAA=</HashCode>
+      <FileName>GameObjects\VertexColor\MillColor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mundos3D.PlaneColor" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAQAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>GameObjects\VertexColor\PlaneColor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mundos3D.PropellerColor" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQBAABAAAgAAABAAAQAAgAAAAAAAAAQAAEAAAAA=</HashCode>
+      <FileName>GameObjects\VertexColor\PropellerColor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mundos3D.Triangle" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAQAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>GameObjects\VertexColor\Triangle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mundos3D.Mundo" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mundos\Mundo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mundos3D.Mundo1" Collapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACAAAAAAAAgAAAAAAAQAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mundos\Mundo1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mundos3D.Mundo2" Collapsed="true">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAABAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Mundos\Mundo2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mundos3D.Mundo3" Collapsed="true">
+    <Position X="7.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAAAAAAgAAAACAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mundos\Mundo3.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mundos3D.Mundo5" Collapsed="true">
+    <Position X="7.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mundos\Mundo5.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mundos3D.Program" Collapsed="true">
+    <Position X="14.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mundos3D.Screen" Collapsed="true">
+    <Position X="16" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABABARAAAAAAAAAAEBAAAQ=</HashCode>
+      <FileName>Screen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

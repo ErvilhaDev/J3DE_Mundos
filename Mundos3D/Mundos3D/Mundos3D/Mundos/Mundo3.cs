@@ -15,6 +15,10 @@ namespace Mundos3D
     class Mundo3 : Mundo2
     {
         PlaneTexture planetexture;
+        CubeTexture cubetexture;
+
+        MillTexture milltexture1;
+        MillTexture milltexture2;
 
         public Mundo3(GraphicsDevice device, Game game) : base(device, game)
         {
@@ -22,6 +26,14 @@ namespace Mundos3D
             this.world = Matrix.Identity;
 
             this.planetexture = new PlaneTexture(device, game);
+            this.cubetexture = new CubeTexture(device, game);
+
+            this.milltexture1 = new MillTexture(device, game);
+                this.milltexture1.position = new Vector3(-3,0,-1);
+                this.milltexture1.rotation = 1f;
+            this.milltexture2 = new MillTexture(device, game);
+                this.milltexture2.position = new Vector3(3, 0, -1);
+                this.milltexture2.rotation = -1f;
 
         }
 
@@ -32,12 +44,23 @@ namespace Mundos3D
 
             this.planetexture.Update(gametime);
             this.planetexture.MatrixWorld = this.world;
+            this.cubetexture.Update(gametime);
+            this.cubetexture.MatrixWorld = this.world;
+
+            this.milltexture1.Update(gametime);
+            this.milltexture1.MatrixWorld = this.world;
+            this.milltexture2.Update(gametime);
+            this.milltexture2.MatrixWorld = this.world;
 
         }
 
         public override void Draw(Camera camera)
         {
             this.planetexture.Draw(camera);
+            this.cubetexture.Draw(camera);
+
+            this.milltexture1.Draw(camera);
+            this.milltexture2.Draw(camera);
         }
     }
 }

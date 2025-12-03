@@ -11,3 +11,6 @@ C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\obj\x86\Debug\Microso
 C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\obj\x86\Debug\Mundos3D.exe
 C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\obj\x86\Debug\Mundos3D.pdb
 C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_grass.xnb
+C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_brick.xnb
+C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_stone.xnb
+C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_wood.xnb

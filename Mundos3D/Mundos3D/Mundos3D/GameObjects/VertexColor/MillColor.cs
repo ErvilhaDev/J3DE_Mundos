@@ -47,7 +47,6 @@ namespace Mundos3D
             
 
             propeller.millWorld = this.world * MatrixWorld;
-
             propeller.Update(gametime);
         }
 

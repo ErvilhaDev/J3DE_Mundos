@@ -10,6 +10,33 @@
       <Output>C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_grass.xnb</Output>
       <Time>2021-05-08T06:05:12.2974754-03:00</Time>
     </Item>
+    <Item>
+      <Source>textures\t_brick.png</Source>
+      <Name>textures\t_brick</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_brick.xnb</Output>
+      <Time>2021-05-07T22:32:50.9736979-03:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\t_stone.png</Source>
+      <Name>textures\t_stone</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_stone.xnb</Output>
+      <Time>2022-01-11T05:55:25.9387921-03:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\t_wood.png</Source>
+      <Name>textures\t_wood</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_wood.xnb</Output>
+      <Time>2021-05-08T02:33:39.0820269-03:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
