@@ -57,6 +57,51 @@
       <Output>obj\x86\Debug\models\XNA_Tower_0.xml</Output>
       <Time>2025-12-03T08:49:10.1172511-03:00</Time>
     </Item>
+    <Item>
+      <Source>shaders\TextureChange.fx</Source>
+      <Name>shaders\TextureChange</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\shaders\TextureChange.xnb</Output>
+      <Time>2025-12-10T19:53:28.9413622-03:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\t_snow.png</Source>
+      <Name>textures\t_snow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_snow.xnb</Output>
+      <Time>2022-01-13T02:51:33.8305556-03:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\t_bricksnow.png</Source>
+      <Name>textures\t_bricksnow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_bricksnow.xnb</Output>
+      <Time>2025-12-10T19:18:49.5853344-03:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\t_stonesnow.png</Source>
+      <Name>textures\t_stonesnow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_stonesnow.xnb</Output>
+      <Time>2025-12-10T19:27:46.2565733-03:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\t_woodsnow.png</Source>
+      <Name>textures\t_woodsnow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_woodsnow.xnb</Output>
+      <Time>2025-12-10T19:30:41.8259793-03:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

@@ -3,3 +3,8 @@ Content\textures\t_brick.xnb
 Content\textures\t_stone.xnb
 Content\textures\t_wood.xnb
 Content\models\XNA_Tower.xnb
+Content\shaders\TextureChange.xnb
+Content\textures\t_snow.xnb
+Content\textures\t_bricksnow.xnb
+Content\textures\t_stonesnow.xnb
+Content\textures\t_woodsnow.xnb

@@ -11,46 +11,60 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Mundos3D
 {
-    class PropellerTexture : PropellerColor
+    class PropellerPixelShader : PropellerTexture
     {
+        Game game;
+
         protected VertexPositionTexture[] verts;
-        protected Texture2D texture;
+        protected Texture2D texture1;
+        protected Texture2D texture2;
+        protected GameTime gt;
 
-        //public Matrix millWorld;
+        Effect shadereffect;
 
-        public PropellerTexture(GraphicsDevice device, Game game)
-            : base(device)
+        public PropellerPixelShader(GraphicsDevice device, Game game)
+            : base(device, game)
         {
             this.device = device;
             this.world = Matrix.Identity;
-
-            effect = new BasicEffect(device);
-            effect.VertexColorEnabled = false;
+            this.game = game;
 
             MakeVertexTexture();
 
-            this.texture = game.Content.Load<Texture2D>(@"textures\t_wood");
-            
+            this.texture1 = game.Content.Load<Texture2D>(@"textures\t_wood");
+            this.texture2 = game.Content.Load<Texture2D>(@"textures\t_woodsnow");
+
+            Effect baseEffect = this.game.Content.Load<Effect>(@"shaders\TextureChange");
+            this.shadereffect = baseEffect.Clone();
+
         }
 
         public override void Update(GameTime gametime)
         {
+            this.gt = gametime;
             base.Update(gametime);
         }
 
         public override void Draw(Camera camera)
         {
-            effect.World = world * MatrixWorld;
-            effect.View = camera.GetView();
-            effect.Projection = camera.GetProjection();
-            effect.TextureEnabled = true;
-            effect.Texture = this.texture;
+            shadereffect.CurrentTechnique = shadereffect.Techniques["Technique1"];
 
-            device.SetVertexBuffer(buffer);
+            shadereffect.Parameters["World"].SetValue(this.world * millWorld);
+            shadereffect.Parameters["View"].SetValue(camera.GetView());
+            shadereffect.Parameters["Projection"].SetValue(camera.GetProjection());
+            shadereffect.Parameters["texture1"].SetValue(this.texture1);
+            shadereffect.Parameters["texture2"].SetValue(this.texture2);
+            shadereffect.Parameters["World"].SetValue(this.world * millWorld);
 
-            effect.World = this.world * millWorld; //Important! This is what makes it attached to the Mill
+            float time = (float)gt.TotalGameTime.TotalSeconds;
+            float blend = (float)((Math.Sin(time) + 1) / 2.0);
 
-            foreach (EffectPass pass in this.effect.CurrentTechnique.Passes)
+            shadereffect.Parameters["BlendAmount"].SetValue(blend);
+
+            //effect.World = this.world * millWorld; //Important! This is what makes it attached to the Mill
+
+
+            foreach (EffectPass pass in this.shadereffect.CurrentTechnique.Passes)
             {
                 pass.Apply();
 

@@ -11,53 +11,74 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Mundos3D
 {
-    class MillTexture : MillColor
+    class MillPixelShader : MillTexture
     {
+        Game game;
+
+        public Matrix millWorld;
+
         protected VertexPositionTexture[] verts;
-        protected Texture2D texture;
+        protected Texture2D texture1;
+        protected Texture2D texture2;
+        protected GameTime gt;
 
-        protected PropellerTexture propeller;
+        Effect shadereffect;
 
-        public MillTexture(GraphicsDevice device, Game game) : base(device)
+        protected PropellerPixelShader s_propeller;
+
+        public MillPixelShader(GraphicsDevice device, Game game)
+            : base(device, game)
         {
             this.device = device;
             this.world = Matrix.Identity;
             this.MatrixWorld = Matrix.Identity;
+            this.game = game;
 
-            this.propeller = new PropellerTexture(device, game);
-
-            effect = new BasicEffect(device);
-            effect.VertexColorEnabled = false;
+            this.s_propeller = new PropellerPixelShader(device, game);
 
             MakeVertexTexture();
 
-            this.texture = game.Content.Load<Texture2D>(@"textures\t_stone");
+            this.texture1 = game.Content.Load<Texture2D>(@"textures\t_stone");
+            this.texture2 = game.Content.Load<Texture2D>(@"textures\t_stonesnow");
+
+            Effect baseEffect = this.game.Content.Load<Effect>(@"shaders\TextureChange");
+            this.shadereffect = baseEffect.Clone();
+
         }
 
         public override void Update(GameTime gametime)
         {
+            base.Update(gametime);
             this.world =
                 Matrix.CreateRotationY(rotation) *
                 Matrix.CreateTranslation(position);
 
-            propeller.millWorld = this.world * MatrixWorld;
-            propeller.Update(gametime);
+
+            Matrix millWorldFinal = this.world * this.MatrixWorld;
+            s_propeller.millWorld = millWorldFinal;
+            s_propeller.Update(gametime);
+
+            this.gt = gametime;
 
         }
 
         public override void Draw(Camera camera)
         {
-            effect.World = world * MatrixWorld;
-            effect.View = camera.GetView();
-            effect.Projection = camera.GetProjection();
-            effect.TextureEnabled = true;
-            effect.Texture = this.texture;
+            shadereffect.CurrentTechnique = shadereffect.Techniques["Technique1"];
+            shadereffect.Parameters["World"].SetValue(world * MatrixWorld);
+            shadereffect.Parameters["View"].SetValue(camera.GetView());
+            shadereffect.Parameters["Projection"].SetValue(camera.GetProjection());
+            shadereffect.Parameters["texture1"].SetValue(this.texture1);
+            shadereffect.Parameters["texture2"].SetValue(this.texture2);
 
-            device.SetVertexBuffer(buffer);
+            float time = (float)gt.TotalGameTime.TotalSeconds;
+            float blend = (float)((Math.Sin(time) + 1) / 2.0);
 
-            propeller.Draw(camera);
+            shadereffect.Parameters["BlendAmount"].SetValue(blend);
 
-            foreach (EffectPass pass in this.effect.CurrentTechnique.Passes)
+            s_propeller.Draw(camera);
+
+            foreach (EffectPass pass in this.shadereffect.CurrentTechnique.Passes)
             {
                 pass.Apply();
 
