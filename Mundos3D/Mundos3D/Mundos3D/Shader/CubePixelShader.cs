@@ -22,12 +22,21 @@ namespace Mundos3D
 
         Effect shadereffect;
 
+        public BasicEffect debugEffect;
+
         public CubePixelShader(GraphicsDevice device, Game game)
             : base(device, game)
         {
             this.device = device;
             this.world = Matrix.Identity;
             this.game = game;
+
+            debugEffect = new BasicEffect(device)
+            {
+                VertexColorEnabled = true
+            };
+
+
 
             MakeVertexTexture();
 
@@ -40,6 +49,7 @@ namespace Mundos3D
         public override void Update(GameTime gametime)
         {
             this.gt = gametime;
+
         }
 
         public override void Draw(Camera camera)
@@ -64,6 +74,8 @@ namespace Mundos3D
                                                                     this.verts, 0, this.verts.Length / 3);
 
             }
+
+
         }
 
         public void MakeVertexTexture()

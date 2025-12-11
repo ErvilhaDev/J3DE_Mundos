@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
-namespace Mundos3D
+namespace Collision
 {
     public class _Player : _Collider
     {

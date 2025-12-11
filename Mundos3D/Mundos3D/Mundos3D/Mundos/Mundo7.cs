@@ -19,8 +19,7 @@ namespace Mundos3D
         MillPixelShader milltexture1;
         MillPixelShader milltexture2;
 
-        public CubeBoundingBox collisiontext;
-        _Collider collider1;
+        //public CubeBoundingBox collisiontext;
 
         Tower tower;
 
@@ -33,10 +32,10 @@ namespace Mundos3D
             this.world = Matrix.Identity;
 
 
-            this.collisiontext = new CubeBoundingBox(device);
-                this.collisiontext.scale = new Vector3(0.5f,0.5f,0.5f);
-                this.collisiontext.angle = 0f;
-                this.collisiontext.position = new Vector3(0,0.5f,0);
+            //this.collisiontext = new CubeBoundingBox(device);
+            //    this.collisiontext.scale = new Vector3(0.5f,0.5f,0.5f);
+            //    this.collisiontext.angle = 0f;
+            //    this.collisiontext.position = new Vector3(0,0.5f,0);
 
             this.planetexture = new PlanePixelShader(device, game);
             this.cubetexture = new CubePixelShader(device, game);
@@ -60,8 +59,8 @@ namespace Mundos3D
 
             this.world = Matrix.CreateTranslation(50, 0, 0); //Scene position
 
-            this.collisiontext.Update(gametime);
-            this.collisiontext.MatrixWorld = this.world;
+            //this.collisiontext.Update(gametime);
+            //this.collisiontext.MatrixWorld = this.world;
 
             this.planetexture.Update(gametime);
             this.planetexture.MatrixWorld = this.world;
@@ -91,7 +90,7 @@ namespace Mundos3D
             this.milltexture1.Draw(camera);
             this.milltexture2.Draw(camera);
 
-            this.collisiontext.Draw(camera);
+            //this.collisiontext.Draw(camera);
 
             this.tower.Draw(camera);
         }
