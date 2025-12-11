@@ -17,7 +17,7 @@ namespace Mundos3D
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        Camera camera;
+        public Camera camera;
         Screen screen;
 
         Game game;
@@ -28,6 +28,7 @@ namespace Mundos3D
         Mundo mundo3;
         Mundo mundo5;
         Mundo mundo6;
+        Mundo mundo7;
 
         public Game1()
         {
@@ -44,7 +45,7 @@ namespace Mundos3D
             this.screen = Screen.GetInstance();
             this.screen.SetWidth(graphics.PreferredBackBufferWidth);
             this.screen.SetHeight(graphics.PreferredBackBufferHeight);
-            this.camera = new Camera();
+            this.camera = new Camera(GraphicsDevice);
 
             //Mundos
             mundo1 = new Mundo1(GraphicsDevice, this);
@@ -52,6 +53,7 @@ namespace Mundos3D
             mundo3 = new Mundo3(GraphicsDevice, this);
             mundo5 = new Mundo5(GraphicsDevice, this);
             mundo6 = new Mundo6(GraphicsDevice, this);
+            mundo7 = new Mundo7(GraphicsDevice, this);
 
             base.Initialize();
         }
@@ -88,6 +90,7 @@ namespace Mundos3D
             mundo3.Update(gameTime);
             mundo5.Update(gameTime);
             mundo6.Update(gameTime);
+            mundo7.Update(gameTime);
 
             base.Update(gameTime);
 
@@ -104,6 +107,7 @@ namespace Mundos3D
             mundo3.Draw(camera);
             mundo5.Draw(camera);
             mundo6.Draw(camera);
+            mundo7.Draw(camera);
 
             base.Draw(gameTime);
 

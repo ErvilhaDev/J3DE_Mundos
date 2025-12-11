@@ -16,10 +16,16 @@ namespace Mundos3D
         protected MillColor mill1;
         protected MillColor mill2;
 
+        PlaneColor plane;
+        CubeColor cubecolor;
+
         public Mundo2(GraphicsDevice device, Game game) : base(device, game)
         {
             this.device = device;
             this.world = Matrix.Identity;
+
+            this.plane = new PlaneColor(device);
+            this.cubecolor = new CubeColor(device);
 
             this.mill1 = new MillColor(device);
             this.mill1.position = new Vector3(-3, 0, -1);
@@ -32,12 +38,17 @@ namespace Mundos3D
 
         public override void Update(GameTime gametime)
         {
-            base.Update(gametime);
+            this.world = Matrix.CreateTranslation(10, 0, 0);
+
+            //base.Update(gametime);
+
+            this.plane.Update(gametime);
+            this.plane.MatrixWorld = this.world;
+            this.cubecolor.Update(gametime);
+            this.cubecolor.MatrixWorld = this.world;
 
             this.mill1.Update(gametime);
             this.mill2.Update(gametime);
-
-            this.world = Matrix.CreateTranslation(10,0,0);
 
             mill1.MatrixWorld = this.world;
             mill2.MatrixWorld = this.world;
@@ -45,7 +56,9 @@ namespace Mundos3D
 
         public override void Draw(Camera camera)
         {
-            base.Draw(camera);
+            //base.Draw(camera);
+            this.plane.Draw(camera);
+            this.cubecolor.Draw(camera);
             this.mill1.Draw(camera);
             this.mill2.Draw(camera);
         }

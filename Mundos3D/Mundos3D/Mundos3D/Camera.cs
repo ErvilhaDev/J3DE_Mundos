@@ -1,6 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace Mundos3D
 {
@@ -13,19 +20,21 @@ namespace Mundos3D
         protected Vector3 target;
         protected Vector3 up;
 
-
         protected float yaw;
-        protected float pitch; 
+        protected float pitch;
 
-        public Camera()
+        public Camera(GraphicsDevice device)
         {
+
             this.position = new Vector3(0, 1, 10); 
             this.yaw = 0f;
             this.pitch = 0f;
             this.up = Vector3.Up;
 
+
             this.UpdateView();
             this.SetupProjection();
+
         }
 
         public void SetupProjection()
@@ -52,10 +61,12 @@ namespace Mundos3D
 
             
             this.view = Matrix.CreateLookAt(this.position, this.target, Vector3.Up);
+
         }
 
         public void Update(GameTime gameTime)
         {
+
             KeyboardState kb = Keyboard.GetState();
 
             float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -89,6 +100,7 @@ namespace Mundos3D
             
             UpdateView();
         }
+
 
         public Matrix GetView()
         {

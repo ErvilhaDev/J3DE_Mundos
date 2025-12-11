@@ -29,12 +29,16 @@ namespace Mundos3D
 
         public override void Update(GameTime gametime)
         {
+            this.world = Matrix.CreateTranslation(0, 0, 0);
+
             //this.triangle.Update(gametime);
             this.plane.Update(gametime);
+            this.plane.MatrixWorld = this.world;
             this.cubecolor.Update(gametime);
+            this.cubecolor.MatrixWorld = this.world;
 
-            plane.MatrixWorld = world;
-            cubecolor.MatrixWorld = world;
+            //plane.MatrixWorld = world;
+            //cubecolor.MatrixWorld = world;
         }
 
         public override void Draw(Camera camera)

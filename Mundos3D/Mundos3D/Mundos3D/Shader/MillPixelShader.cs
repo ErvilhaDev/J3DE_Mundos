@@ -26,6 +26,9 @@ namespace Mundos3D
 
         protected PropellerPixelShader s_propeller;
 
+        CubeBoundingBox collider;
+
+
         public MillPixelShader(GraphicsDevice device, Game game)
             : base(device, game)
         {
@@ -35,6 +38,11 @@ namespace Mundos3D
             this.game = game;
 
             this.s_propeller = new PropellerPixelShader(device, game);
+
+            this.collider = new CubeBoundingBox(device);
+            this.collider.scale = new Vector3(1f, 1.5f, 1f);
+            this.collider.angle = 0f;
+            this.collider.position = new Vector3(0, 1.5f, 0);
 
             MakeVertexTexture();
 
@@ -58,6 +66,10 @@ namespace Mundos3D
             s_propeller.millWorld = millWorldFinal;
             s_propeller.Update(gametime);
 
+            Matrix colliderWorldFinal = this.world * this.MatrixWorld;
+            this.collider.MatrixWorld = colliderWorldFinal;
+            this.collider.Update(gametime);
+
             this.gt = gametime;
 
         }
@@ -77,6 +89,7 @@ namespace Mundos3D
             shadereffect.Parameters["BlendAmount"].SetValue(blend);
 
             s_propeller.Draw(camera);
+            this.collider.Draw(camera);
 
             foreach (EffectPass pass in this.shadereffect.CurrentTechnique.Passes)
             {
