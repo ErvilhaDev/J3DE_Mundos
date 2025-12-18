@@ -24,16 +24,21 @@ namespace Mundos3D
 
         Vector3 position;
         Vector3 scale;
+        float rotationY;
+        float rotationX;
         
 
-        public Bandeira(GraphicsDevice device, Game game, string textureName, string effectName, Vector3 position, Vector3 scale)
+        public Bandeira(GraphicsDevice device, Game game, string textureName, string effectName, Vector3 position, Vector3 scale, float rotX, float rotY)
         {
             this.game = game;
             this.device = device;
             this.world = Matrix.Identity;
-            this.world *= Matrix.CreateRotationY(MathHelper.ToRadians(45));
+            //this.world *= Matrix.CreateRotationY(MathHelper.ToRadians(rotationY));
             this.position = position;
             this.scale = scale;
+
+            rotationX = rotX;
+            rotationY = rotY;
 
             this.row = 150;
             this.column = 200;
@@ -89,7 +94,9 @@ namespace Mundos3D
 
             this.world =
                 Matrix.CreateScale(scale) *
-                Matrix.CreateTranslation(position);
+                Matrix.CreateTranslation(position) *
+                Matrix.CreateRotationY(MathHelper.ToRadians(rotationY)) *
+                Matrix.CreateRotationX(MathHelper.ToRadians(rotationX));
         }
 
         public virtual void Draw(Camera camera)
@@ -102,6 +109,10 @@ namespace Mundos3D
             this.effect.Parameters["Projection"].SetValue(camera.GetProjection());
             this.effect.Parameters["flagTexture"].SetValue(this.texture);
             this.effect.Parameters["time"].SetValue(this.time);
+            this.effect.Parameters["WaveAmplitude"].SetValue(1.5f);   // altura da onda
+            this.effect.Parameters["WaveFrequency"].SetValue(1f);   // tamanho
+            this.effect.Parameters["WaveSpeed"].SetValue(1.0f);       // velocidade
+            this.effect.Parameters["WaveDirection"].SetValue(new Vector2(1, 0)); // direção
                         
             foreach (EffectPass pass in this.effect.CurrentTechnique.Passes)
             {

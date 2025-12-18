@@ -5,6 +5,11 @@ Texture flagTexture;
 float time;
 
 
+float WaveAmplitude;
+float WaveFrequency;
+float WaveSpeed;
+float2 WaveDirection;
+
 sampler flagTextureSampler = sampler_state
 {
 	texture = <flagTexture>;
@@ -32,13 +37,19 @@ VertexShaderOutput VertexShaderFunction(VertexShaderInput input)
 {
     VertexShaderOutput output;
 
-	input.Position.z += sin(time - input.Position.x + input.Position.y);
+    float wave =
+        sin(
+            dot(input.Position.yz, WaveDirection) * WaveFrequency
+            + time * WaveSpeed
+        );
+
+    input.Position.x += wave * WaveAmplitude;
 
     float4 worldPosition = mul(input.Position, World);
     float4 viewPosition = mul(worldPosition, View);
     output.Position = mul(viewPosition, Projection);
 
-	output.TexCoord = input.TexCoord;
+    output.TexCoord = input.TexCoord;
 
     return output;
 }

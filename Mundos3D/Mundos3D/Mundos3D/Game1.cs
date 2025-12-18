@@ -45,16 +45,16 @@ namespace Mundos3D
 
             mundos = new Mundo[]
             {
-                new Mundo1(GraphicsDevice, this),
-                new Mundo2(GraphicsDevice, this),
-                new Mundo3(GraphicsDevice, this),
-                new Mundo5(GraphicsDevice, this),
-                new Mundo6(GraphicsDevice, this),
+                //new Mundo1(GraphicsDevice, this),
+                //new Mundo2(GraphicsDevice, this),
+                //new Mundo3(GraphicsDevice, this),
+                //new Mundo5(GraphicsDevice, this),
+                //new Mundo6(GraphicsDevice, this),
                 new Mundo7(GraphicsDevice, this),
-                new Mundo8(GraphicsDevice, this),
-                new Mundo9(GraphicsDevice, this),
-                new Mundo10(GraphicsDevice, this),
-                new Mundo11(GraphicsDevice, this)
+                //new Mundo8(GraphicsDevice, this),
+                //new Mundo9(GraphicsDevice, this),
+                //new Mundo10(GraphicsDevice, this),
+                //new Mundo11(GraphicsDevice, this)
             };
 
             ////Mundos

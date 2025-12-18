@@ -38,7 +38,7 @@ namespace Mundos3D
                 @"textures/FlagBrazil",
                 @"shaders/MotionEffect",
                 new Vector3(13, 145f, 0),   // topo da torre (ajuste fino)
-                new Vector3(1f));
+                new Vector3(1f), 0, 0f);
         }
 
         public override void Update(GameTime gametime)
@@ -74,7 +74,7 @@ namespace Mundos3D
                 mesh.Draw();
             }
 
-            bandeira.Draw(camera);
+            //bandeira.Draw(camera);
         }
     }
 }

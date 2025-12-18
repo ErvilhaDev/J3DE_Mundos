@@ -17,6 +17,7 @@ namespace Mundos3D
 
         //PlanePixelShader planetexture;
         _Grid terrain;
+        Bandeira agua;
         CubePixelShader cubetexture;
 
         MillPixelShader milltexture1;
@@ -41,6 +42,15 @@ namespace Mundos3D
 
             //this.planetexture = new PlanePixelShader(device, game);
             this.terrain = new _Grid(game, new Vector3(0, -2.2f, 0), new Vector3(0.4f, 0.1f, 0.4f));
+
+            agua = new Bandeira(
+                device,
+                game,
+                @"textures/t_water",
+                @"shaders/MotionEffect",
+                new Vector3(0, 0, -1),
+                new Vector3(2f, 3f, 2f), -90f, 0f);
+
             this.cubetexture = new CubePixelShader(device, game);
 
             this.milltexture1 = new MillPixelShader(device, game);
@@ -104,6 +114,9 @@ namespace Mundos3D
             this.terrain.Update(gametime);
             this.terrain.MatrixWorld = this.world;
 
+            agua.MatrixWorld = this.world * this.MatrixWorld;
+            agua.Update(gametime);
+
             this.cubetexture.Update(gametime);
             this.cubetexture.MatrixWorld = this.world;
 
@@ -156,6 +169,7 @@ namespace Mundos3D
 
             //this.planetexture.Draw(camera);
             this.terrain.Draw(camera);
+            this.agua.Draw(camera);
             this.cubetexture.Draw(camera);
 
             this.milltexture1.Draw(camera);
