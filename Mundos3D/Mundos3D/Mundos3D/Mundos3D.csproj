@@ -108,12 +108,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Camera.cs" />
-    <Compile Include="Collision\CubeBoundingBox.cs" />
+    <Compile Include="Collision\CBox.cs" />
+    <Compile Include="Collision\EBox.cs" />
+    <Compile Include="Collision\_Collider.cs" />
+    <Compile Include="Collision\_LineBox.cs" />
+    <Compile Include="Collision\_Player.cs" />
     <Compile Include="LineBox.cs" />
     <Compile Include="Mundos\Mundo7.cs" />
-    <Compile Include="Shader\PropellerPixelShader.cs" />
-    <Compile Include="Shader\MillPixelShader.cs" />
-    <Compile Include="Shader\CubePixelShader.cs" />
+    <Compile Include="GameObjects\Shader\PropellerPixelShader.cs" />
+    <Compile Include="GameObjects\Shader\MillPixelShader.cs" />
+    <Compile Include="GameObjects\Shader\CubePixelShader.cs" />
     <Compile Include="GameObjects\Textured\CubeTexture.cs" />
     <Compile Include="GameObjects\VertexColor\CubeColor.cs" />
     <Compile Include="GameObjects\GameObject.cs" />
@@ -129,7 +133,7 @@
     <Compile Include="GameObjects\VertexColor\PropellerColor.cs" />
     <Compile Include="GameObjects\Textured\PlaneTexture.cs" />
     <Compile Include="GameObjects\Textured\PropellerTexture.cs" />
-    <Compile Include="Shader\PlanePixelShader.cs" />
+    <Compile Include="GameObjects\Shader\PlanePixelShader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />

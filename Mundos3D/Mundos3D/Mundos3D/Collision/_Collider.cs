@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Collision
+namespace Mundos3D
 {
     public class _Collider
     {
@@ -31,10 +31,10 @@ namespace Collision
                                       this.position + this.dimension / 2f);
         }
 
-        public void Draw(BasicEffect e)
+        public void Draw(BasicEffect e, Camera c)
         {
             if (this.visible)
-                this.lineBox.Draw(e);
+                this.lineBox.Draw(e, c);
         }
 
         public void SetPosition(Vector3 position)

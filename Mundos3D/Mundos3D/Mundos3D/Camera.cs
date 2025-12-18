@@ -11,19 +11,22 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Mundos3D
 {
-    public class Camera
+    public class Camera : _Collider
     {
         protected Matrix view;
         protected Matrix projection;
 
-        protected Vector3 position;
+        //protected Vector3 position;
         protected Vector3 target;
         protected Vector3 up;
 
         protected float yaw;
         protected float pitch;
 
-        public Camera(GraphicsDevice device)
+        Vector3 oldPosition;
+
+        public Camera(GraphicsDevice device, Game game) :
+            base(game, new Vector3(0, 1, 10), new Vector3(2.5f, 0.25f, 2.5f), Color.Black)
         {
 
             this.position = new Vector3(0, 1, 10); 
@@ -52,20 +55,15 @@ namespace Mundos3D
         {
             
             Matrix rotation = Matrix.CreateFromYawPitchRoll(yaw, pitch, 0);
-
-            
             Vector3 forward = Vector3.Transform(Vector3.Forward, rotation);
-
-            
             this.target = this.position + forward;
-
-            
             this.view = Matrix.CreateLookAt(this.position, this.target, Vector3.Up);
 
         }
 
         public void Update(GameTime gameTime)
         {
+            this.oldPosition = this.position;
 
             KeyboardState kb = Keyboard.GetState();
 
@@ -97,8 +95,9 @@ namespace Mundos3D
             if (kb.IsKeyDown(Keys.Z)) position += Vector3.Up * moveSpeed;
             if (kb.IsKeyDown(Keys.X)) position -= Vector3.Up * moveSpeed;
 
-            
+            base.SetPosition(this.position);
             UpdateView();
+           
         }
 
 
@@ -110,6 +109,18 @@ namespace Mundos3D
         public Matrix GetProjection()
         {
             return this.projection;
+        }
+
+
+
+        public Vector3 GetPosition()
+        {
+            return this.position;
+        }
+
+        public void RestorePosition()
+        {
+            this.position = this.oldPosition;
         }
     }
 }

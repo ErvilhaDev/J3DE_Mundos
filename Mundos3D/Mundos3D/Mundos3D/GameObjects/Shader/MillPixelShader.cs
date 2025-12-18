@@ -14,7 +14,6 @@ namespace Mundos3D
     class MillPixelShader : MillTexture
     {
         Game game;
-
         public Matrix millWorld;
 
         protected VertexPositionTexture[] verts;
@@ -23,11 +22,14 @@ namespace Mundos3D
         protected GameTime gt;
 
         Effect shadereffect;
+        BasicEffect effect;
 
         protected PropellerPixelShader s_propeller;
+        private CBox collider;
+        float colPosition;
+        float colSize;
 
-        CubeBoundingBox collider;
-
+        //CubeBoundingBox collider;
 
         public MillPixelShader(GraphicsDevice device, Game game)
             : base(device, game)
@@ -37,12 +39,11 @@ namespace Mundos3D
             this.MatrixWorld = Matrix.Identity;
             this.game = game;
 
-            this.s_propeller = new PropellerPixelShader(device, game);
+            colSize = 4;
+            colPosition = colSize / 2;
 
-            this.collider = new CubeBoundingBox(device);
-            this.collider.scale = new Vector3(1f, 1.5f, 1f);
-            this.collider.angle = 0f;
-            this.collider.position = new Vector3(0, 1.5f, 0);
+            this.s_propeller = new PropellerPixelShader(device, game);
+            this.collider = new CBox(game, this.position, new Vector3(2f, colSize, 2f));
 
             MakeVertexTexture();
 
@@ -51,6 +52,8 @@ namespace Mundos3D
 
             Effect baseEffect = this.game.Content.Load<Effect>(@"shaders\TextureChange");
             this.shadereffect = baseEffect.Clone();
+
+            effect = new BasicEffect(device);
 
         }
 
@@ -63,12 +66,12 @@ namespace Mundos3D
 
 
             Matrix millWorldFinal = this.world * this.MatrixWorld;
+
+            Vector3 colliderWorldPos = Vector3.Transform(new Vector3 (0, colPosition, 0), this.world * this.MatrixWorld);
+            collider.Update(colliderWorldPos);
+
             s_propeller.millWorld = millWorldFinal;
             s_propeller.Update(gametime);
-
-            Matrix colliderWorldFinal = this.world * this.MatrixWorld;
-            this.collider.MatrixWorld = colliderWorldFinal;
-            this.collider.Update(gametime);
 
             this.gt = gametime;
 
@@ -89,7 +92,6 @@ namespace Mundos3D
             shadereffect.Parameters["BlendAmount"].SetValue(blend);
 
             s_propeller.Draw(camera);
-            this.collider.Draw(camera);
 
             foreach (EffectPass pass in this.shadereffect.CurrentTechnique.Passes)
             {
@@ -99,6 +101,16 @@ namespace Mundos3D
                                                                     this.verts, 0, this.verts.Length / 3);
 
             }
+
+            if (collider != null && collider.GetVisible())
+            {
+                collider.Draw(effect, camera);
+            }
+        }
+
+        public CBox GetCollider()
+        {
+            return this.collider;
         }
 
         public void MakeVertexTexture()

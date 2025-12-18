@@ -16,6 +16,7 @@ namespace Mundos3D
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        BasicEffect effect;
 
         public Camera camera;
         Screen screen;
@@ -45,7 +46,8 @@ namespace Mundos3D
             this.screen = Screen.GetInstance();
             this.screen.SetWidth(graphics.PreferredBackBufferWidth);
             this.screen.SetHeight(graphics.PreferredBackBufferHeight);
-            this.camera = new Camera(GraphicsDevice);
+            this.camera = new Camera(GraphicsDevice, this);
+            this.effect = new BasicEffect(GraphicsDevice);
 
             //Mundos
             mundo1 = new Mundo1(GraphicsDevice, this);
@@ -92,6 +94,7 @@ namespace Mundos3D
             mundo6.Update(gameTime);
             mundo7.Update(gameTime);
 
+            
             base.Update(gameTime);
 
             
@@ -100,16 +103,17 @@ namespace Mundos3D
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+           GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            mundo1.Draw(camera);
-            mundo2.Draw(camera);
-            mundo3.Draw(camera);
-            mundo5.Draw(camera);
-            mundo6.Draw(camera);
-            mundo7.Draw(camera);
+           mundo1.Draw(camera);
+           mundo2.Draw(camera);
+           mundo3.Draw(camera);
+           mundo5.Draw(camera);
+           mundo6.Draw(camera);
+           mundo7.Draw(camera);
 
-            base.Draw(gameTime);
+           camera.Draw(effect, camera);
+           base.Draw(gameTime);
 
         }
     }

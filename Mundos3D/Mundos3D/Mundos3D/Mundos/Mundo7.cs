@@ -13,13 +13,15 @@ namespace Mundos3D
 {
     class Mundo7 : Mundo6
     {
+        Game game;
+
         PlanePixelShader planetexture;
         CubePixelShader cubetexture;
 
         MillPixelShader milltexture1;
         MillPixelShader milltexture2;
 
-        //public CubeBoundingBox collisiontext;
+        private List<MillPixelShader> mills;
 
         Tower tower;
 
@@ -30,12 +32,6 @@ namespace Mundos3D
         {
             this.device = device;
             this.world = Matrix.Identity;
-
-
-            //this.collisiontext = new CubeBoundingBox(device);
-            //    this.collisiontext.scale = new Vector3(0.5f,0.5f,0.5f);
-            //    this.collisiontext.angle = 0f;
-            //    this.collisiontext.position = new Vector3(0,0.5f,0);
 
             this.planetexture = new PlanePixelShader(device, game);
             this.cubetexture = new CubePixelShader(device, game);
@@ -48,19 +44,24 @@ namespace Mundos3D
             this.milltexture2.position = new Vector3(3, 0, -1);
             this.milltexture2.rotation = -1f;
 
+            // Cria lista de moinhos
+            mills = new List<MillPixelShader>();
+            // Adiciona os moinhos
+            mills.Add(milltexture1);
+            mills.Add(milltexture2);
+
 
             this.tower = new Tower(device, game);
             this.tower.position = new Vector3(0, 0, -4);
             this.tower.scale = new Vector3(0.04f);
+
+            
         }
 
         public override void Update(GameTime gametime)
         {
 
             this.world = Matrix.CreateTranslation(50, 0, 0); //Scene position
-
-            //this.collisiontext.Update(gametime);
-            //this.collisiontext.MatrixWorld = this.world;
 
             this.planetexture.Update(gametime);
             this.planetexture.MatrixWorld = this.world;
@@ -73,6 +74,34 @@ namespace Mundos3D
 
             this.milltexture2.Update(gametime);
             this.milltexture2.MatrixWorld = this.world;
+
+            foreach (MillPixelShader mill in mills)
+            {
+                CBox collider = mill.GetCollider();
+                
+                // IMPORTANTE: Verifique se collider não é null!
+                if (collider != null && camera != null)
+                {
+                    if (collider.IsColliding(camera.GetBoundingBox()))
+                    {
+                        //game.Window.Title = "COLIDINDO";
+                        camera.RestorePosition();
+                        break;
+                    }
+                    else
+                    {
+                        //game.Window.Title = "Sem Colisao";
+                    }
+                }
+                else
+                {
+                    // Debug: veja qual está null
+                    //if (collider == null)
+                    //    Console.WriteLine("AVISO: Collider é null!");
+                    //if (camera == null)
+                    //    Console.WriteLine("AVISO: Camera é null!");
+                }
+            }
 
 
             this.tower.Update(gametime);
@@ -90,9 +119,8 @@ namespace Mundos3D
             this.milltexture1.Draw(camera);
             this.milltexture2.Draw(camera);
 
-            //this.collisiontext.Draw(camera);
-
             this.tower.Draw(camera);
         }
+
     }
 }

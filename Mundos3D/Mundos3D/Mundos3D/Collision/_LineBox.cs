@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Collision
+namespace Mundos3D
 {
     public class _LineBox
     {
@@ -99,9 +99,11 @@ namespace Collision
             this.iBuffer.SetData<short>(this.indexes);
         }
 
-        public void Draw(BasicEffect e)
+        public void Draw(BasicEffect e, Camera c)
         {
             e.World = this.world;
+            e.View = c.GetView();
+            e.Projection = c.GetProjection();
             e.VertexColorEnabled = true;
 
             this.game.GraphicsDevice.SetVertexBuffer(this.vBuffer);
