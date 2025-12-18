@@ -41,6 +41,7 @@ namespace Mundos3D
             effect.Projection = camera.GetProjection();
             effect.TextureEnabled = true;
             effect.Texture = this.texture;
+            
 
             device.SetVertexBuffer(buffer);
 

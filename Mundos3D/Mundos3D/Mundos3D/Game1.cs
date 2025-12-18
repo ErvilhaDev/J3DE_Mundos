@@ -30,6 +30,9 @@ namespace Mundos3D
         Mundo mundo5;
         Mundo mundo6;
         Mundo mundo7;
+        Mundo mundo8;
+
+        Mundo[] mundos;
 
         public Game1()
         {
@@ -49,13 +52,24 @@ namespace Mundos3D
             this.camera = new Camera(GraphicsDevice, this);
             this.effect = new BasicEffect(GraphicsDevice);
 
-            //Mundos
-            mundo1 = new Mundo1(GraphicsDevice, this);
-            mundo2 = new Mundo2(GraphicsDevice, this);
-            mundo3 = new Mundo3(GraphicsDevice, this);
-            mundo5 = new Mundo5(GraphicsDevice, this);
-            mundo6 = new Mundo6(GraphicsDevice, this);
-            mundo7 = new Mundo7(GraphicsDevice, this);
+            mundos = new Mundo[]
+            {
+                new Mundo1(GraphicsDevice, this),
+                new Mundo2(GraphicsDevice, this),
+                new Mundo3(GraphicsDevice, this),
+                new Mundo5(GraphicsDevice, this),
+                new Mundo6(GraphicsDevice, this),
+                new Mundo7(GraphicsDevice, this),
+                new Mundo8(GraphicsDevice, this)
+            };
+
+            ////Mundos
+            //mundo1 = new Mundo1(GraphicsDevice, this);
+            //mundo2 = new Mundo2(GraphicsDevice, this);
+            //mundo3 = new Mundo3(GraphicsDevice, this);
+            //mundo5 = new Mundo5(GraphicsDevice, this);
+            //mundo6 = new Mundo6(GraphicsDevice, this);
+            //mundo7 = new Mundo7(GraphicsDevice, this);
 
             base.Initialize();
         }
@@ -87,12 +101,11 @@ namespace Mundos3D
             }
 
             this.camera.Update(gameTime);
-            mundo1.Update(gameTime);
-            mundo2.Update(gameTime);
-            mundo3.Update(gameTime);
-            mundo5.Update(gameTime);
-            mundo6.Update(gameTime);
-            mundo7.Update(gameTime);
+
+            foreach (Mundo mundo in mundos)
+            {
+                mundo.Update(gameTime);
+            }
 
             
             base.Update(gameTime);
@@ -105,12 +118,10 @@ namespace Mundos3D
         {
            GraphicsDevice.Clear(Color.CornflowerBlue);
 
-           mundo1.Draw(camera);
-           mundo2.Draw(camera);
-           mundo3.Draw(camera);
-           mundo5.Draw(camera);
-           mundo6.Draw(camera);
-           mundo7.Draw(camera);
+           foreach (Mundo mundo in mundos)
+           {
+               mundo.Draw(camera);
+           }
 
            camera.Draw(effect, camera);
            base.Draw(gameTime);

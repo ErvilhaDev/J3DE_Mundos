@@ -122,5 +122,10 @@ namespace Mundos3D
         {
             this.position = this.oldPosition;
         }
+
+        public float GetYaw()
+        {
+            return this.yaw;
+        }
     }
 }

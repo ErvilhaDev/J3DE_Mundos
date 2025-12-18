@@ -102,6 +102,15 @@
       <Output>C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_woodsnow.xnb</Output>
       <Time>2025-12-10T19:30:41.8259793-03:00</Time>
     </Item>
+    <Item>
+      <Source>textures\t_arvore.png</Source>
+      <Name>textures\t_arvore</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_arvore.xnb</Output>
+      <Time>2025-11-12T10:44:18.5241708-03:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
