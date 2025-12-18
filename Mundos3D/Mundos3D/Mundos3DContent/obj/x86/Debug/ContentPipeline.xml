@@ -111,6 +111,51 @@
       <Output>C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_arvore.xnb</Output>
       <Time>2025-11-12T10:44:18.5241708-03:00</Time>
     </Item>
+    <Item>
+      <Source>textures\t_grass2.jpg</Source>
+      <Name>textures\t_grass2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_grass2.xnb</Output>
+      <Time>2025-11-06T09:46:36.8021111-03:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\t_hm.jpg</Source>
+      <Name>textures\t_hm</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_hm.xnb</Output>
+      <Time>2025-11-06T09:46:36.8021111-03:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\FlagBrazil.bmp</Source>
+      <Name>textures\FlagBrazil</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\FlagBrazil.xnb</Output>
+      <Time>2015-06-24T21:57:14.5699427-03:00</Time>
+    </Item>
+    <Item>
+      <Source>shaders\MotionEffect.fx</Source>
+      <Name>shaders\MotionEffect</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\shaders\MotionEffect.xnb</Output>
+      <Time>2015-06-24T23:27:52.4935829-03:00</Time>
+    </Item>
+    <Item>
+      <Source>textures\t_water.jpg</Source>
+      <Name>textures\t_water</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Vitor\Fork\J3DE_Mundos\Mundos3D\Mundos3D\Mundos3D\bin\x86\Debug\Content\textures\t_water.xnb</Output>
+      <Time>2025-12-18T05:07:39.7157364-03:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

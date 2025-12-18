@@ -19,6 +19,8 @@ namespace Mundos3D
         public Vector3 scale;
         public float angleY;
 
+        Bandeira bandeira;
+
         public Tower(GraphicsDevice device, Game game)
         {
             this.device = device;
@@ -29,6 +31,14 @@ namespace Mundos3D
             this.angleY = 0;
 
             this.model = game.Content.Load<Model>(@"models\XNA_Tower");
+
+            bandeira = new Bandeira(
+                device,
+                game,
+                @"textures/FlagBrazil",
+                @"shaders/MotionEffect",
+                new Vector3(13, 145f, 0),   // topo da torre (ajuste fino)
+                new Vector3(1f));
         }
 
         public override void Update(GameTime gametime)
@@ -37,6 +47,9 @@ namespace Mundos3D
                 Matrix.CreateScale(scale) *
                 Matrix.CreateRotationY(MathHelper.ToRadians(angleY)) *
                 Matrix.CreateTranslation(position);
+
+            bandeira.MatrixWorld = this.world * this.MatrixWorld;
+            bandeira.Update(gametime);
         }
 
         public override void Draw(Camera camera)
@@ -60,6 +73,8 @@ namespace Mundos3D
 
                 mesh.Draw();
             }
+
+            bandeira.Draw(camera);
         }
     }
 }

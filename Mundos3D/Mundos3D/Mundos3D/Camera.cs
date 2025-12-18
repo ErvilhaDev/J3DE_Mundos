@@ -26,7 +26,7 @@ namespace Mundos3D
         Vector3 oldPosition;
 
         public Camera(GraphicsDevice device, Game game) :
-            base(game, new Vector3(0, 1, 10), new Vector3(2.5f, 0.25f, 2.5f), Color.Black)
+            base(game, new Vector3(0, 1, 10), new Vector3(1f, 0.25f, 1f), Color.Black)
         {
 
             this.position = new Vector3(0, 1, 10); 

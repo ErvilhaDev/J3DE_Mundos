@@ -23,15 +23,6 @@ namespace Mundos3D
 
         Game game;
 
-        //Mundos
-        Mundo mundo1;
-        Mundo mundo2;
-        Mundo mundo3;
-        Mundo mundo5;
-        Mundo mundo6;
-        Mundo mundo7;
-        Mundo mundo8;
-
         Mundo[] mundos;
 
         public Game1()
@@ -60,7 +51,10 @@ namespace Mundos3D
                 new Mundo5(GraphicsDevice, this),
                 new Mundo6(GraphicsDevice, this),
                 new Mundo7(GraphicsDevice, this),
-                new Mundo8(GraphicsDevice, this)
+                new Mundo8(GraphicsDevice, this),
+                new Mundo9(GraphicsDevice, this),
+                new Mundo10(GraphicsDevice, this),
+                new Mundo11(GraphicsDevice, this)
             };
 
             ////Mundos

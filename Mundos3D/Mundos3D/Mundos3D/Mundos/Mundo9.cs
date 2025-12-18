@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Mundos3D
 {
-    class Mundo8 : Mundo7
+    class Mundo9 : Mundo8
     {
         Game game;
 
@@ -32,7 +32,7 @@ namespace Mundos3D
 
         Camera camera;
 
-        public Mundo8(GraphicsDevice device, Game game)
+        public Mundo9(GraphicsDevice device, Game game)
             : base(device, game)
         {
             this.device = device;
@@ -67,7 +67,7 @@ namespace Mundos3D
             float spacingX = 1.5f;
             float spacingZ = 1.5f;
 
-            Vector3 startPos = new Vector3(55, 1, -8);
+            Vector3 startPos = new Vector3(65, 1, -8);
 
             treeNumber = rows * columns;
             trees = new Billboard[treeNumber];
@@ -95,7 +95,7 @@ namespace Mundos3D
         public override void Update(GameTime gametime)
         {
 
-            this.world = Matrix.CreateTranslation(60, 0, 0); //Scene position
+            this.world = Matrix.CreateTranslation(70, 0, 0); //Scene position
 
             this.planetexture.Update(gametime);
             this.planetexture.MatrixWorld = this.world;
@@ -113,12 +113,12 @@ namespace Mundos3D
             {
                 CBox collider = mill.GetCollider();
 
-                
+
                 if (collider != null && camera != null)
                 {
                     if (collider.IsColliding(camera.GetBoundingBox()))
                     {
-                        
+
                         camera.RestorePosition();
                         break;
                     }
@@ -169,7 +169,7 @@ namespace Mundos3D
         private void SortTrees(Camera camera)
         {
             Vector3 camPos = camera.GetPosition();
-            
+
 
             for (int i = 0; i < trees.Length - 1; i++)
             {

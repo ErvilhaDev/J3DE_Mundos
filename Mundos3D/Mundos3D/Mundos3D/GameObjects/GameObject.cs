@@ -27,7 +27,7 @@ namespace Mundos3D
 
         public virtual void Draw(Camera camera)
         {
-            effect.World = world * MatrixWorld;
+            effect.World = world * MatrixWorld; //calculo pra parentear
             effect.View = camera.GetView();
             effect.Projection = camera.GetProjection();
 

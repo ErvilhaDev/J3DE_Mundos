@@ -11,11 +11,12 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Mundos3D
 {
-    class Mundo8 : Mundo7
+    class Mundo10 : Mundo9
     {
         Game game;
 
-        PlanePixelShader planetexture;
+        //PlanePixelShader planetexture;
+        _Grid terrain;
         CubePixelShader cubetexture;
 
         MillPixelShader milltexture1;
@@ -32,13 +33,14 @@ namespace Mundos3D
 
         Camera camera;
 
-        public Mundo8(GraphicsDevice device, Game game)
+        public Mundo10(GraphicsDevice device, Game game)
             : base(device, game)
         {
             this.device = device;
             this.world = Matrix.Identity;
 
-            this.planetexture = new PlanePixelShader(device, game);
+            //this.planetexture = new PlanePixelShader(device, game);
+            this.terrain = new _Grid(game, new Vector3(0, -2.2f, 0), new Vector3(0.4f, 0.1f, 0.4f));
             this.cubetexture = new CubePixelShader(device, game);
 
             this.milltexture1 = new MillPixelShader(device, game);
@@ -67,7 +69,7 @@ namespace Mundos3D
             float spacingX = 1.5f;
             float spacingZ = 1.5f;
 
-            Vector3 startPos = new Vector3(55, 1, -8);
+            Vector3 startPos = new Vector3(85, 1, -8);
 
             treeNumber = rows * columns;
             trees = new Billboard[treeNumber];
@@ -95,10 +97,12 @@ namespace Mundos3D
         public override void Update(GameTime gametime)
         {
 
-            this.world = Matrix.CreateTranslation(60, 0, 0); //Scene position
+            this.world = Matrix.CreateTranslation(90, 0, 0); //Scene position
 
-            this.planetexture.Update(gametime);
-            this.planetexture.MatrixWorld = this.world;
+            //this.planetexture.Update(gametime);
+            //this.planetexture.MatrixWorld = this.world;
+            this.terrain.Update(gametime);
+            this.terrain.MatrixWorld = this.world;
 
             this.cubetexture.Update(gametime);
             this.cubetexture.MatrixWorld = this.world;
@@ -113,12 +117,12 @@ namespace Mundos3D
             {
                 CBox collider = mill.GetCollider();
 
-                
+
                 if (collider != null && camera != null)
                 {
                     if (collider.IsColliding(camera.GetBoundingBox()))
                     {
-                        
+
                         camera.RestorePosition();
                         break;
                     }
@@ -150,7 +154,8 @@ namespace Mundos3D
         {
             this.camera = camera;
 
-            this.planetexture.Draw(camera);
+            //this.planetexture.Draw(camera);
+            this.terrain.Draw(camera);
             this.cubetexture.Draw(camera);
 
             this.milltexture1.Draw(camera);
@@ -169,7 +174,7 @@ namespace Mundos3D
         private void SortTrees(Camera camera)
         {
             Vector3 camPos = camera.GetPosition();
-            
+
 
             for (int i = 0; i < trees.Length - 1; i++)
             {
