@@ -74,7 +74,7 @@ namespace Mundos3D
                 mesh.Draw();
             }
 
-            //bandeira.Draw(camera);
+            bandeira.Draw(camera);
         }
     }
 }
